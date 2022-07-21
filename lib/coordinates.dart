@@ -7,6 +7,12 @@ class Coordinate {
 
   Coordinate(this.latitude, this.longitude);
 
+  Coordinate.fromString(String coordinate)
+      : assert(coordinate.isNotEmpty),
+        assert(coordinate.contains(',')),
+        latitude = double.parse(coordinate.split(',')[0]),
+        longitude = double.parse(coordinate.split(',')[1]);
+
   double get latitudeInRadians => latitude.toRadians();
   double get longitudeInRadians => longitude.toRadians();
 

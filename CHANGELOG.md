@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Coordinate class fromString constructor added
+
 ## 1.0.1
 
 - Typo correction

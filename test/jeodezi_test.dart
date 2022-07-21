@@ -10,6 +10,16 @@ final fcoCoordinates = Coordinate(41.8002778, 12.2388889); // The coordinates of
 final sfoCoordinates = Coordinate(37.615223, -122.389977); // The coordinates of San Francisco SFO Airport
 const delta = 1; // The delta for the tests
 void main() {
+  test('coordinate', () {
+    final coordinate = Coordinate(41.28111111, 28.75333333);
+    expect(coordinate.latitude, 41.28111111);
+    expect(coordinate.longitude, 28.75333333);
+
+    final coordinate2 = Coordinate.fromString('41.28111111, 28.75333333');
+    expect(coordinate2.latitude, 41.28111111);
+    expect(coordinate2.longitude, 28.75333333);
+  });
+
   test('distance', () {
     final distance = greatCircle.distance(istCoordinates, jfkCoordinates);
     expect(distance, closeTo(8028, delta));
