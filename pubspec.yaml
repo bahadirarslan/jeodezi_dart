@@ -3,7 +3,6 @@ description: >
   Jeodezi is Dart version of Jeodezi Kotlin which is based of Chris Veness's amazing work Geodesy Functions. Geodesy Functions is written in JavaScript and contains dozens of functions to make calculations about:
     Geodesic calculations (distances, bearings, etc) covering both spherical earth and ellipsoidal earth models, and both trigonometry-based and vector-based approaches.
     Ellipsoidal-earth coordinate systems covering both historical datums and modern terrestrial reference frames (TRFs).
-    Mapping functions including UTM/MGRS and UK OS Grid References.
 version: 1.0.3
 repository: https://github.com/bahadirarslan/jeodezi_dart
 
