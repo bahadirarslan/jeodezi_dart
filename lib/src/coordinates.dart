@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jeodezi/extensions.dart';
+import 'extensions.dart';
 
 class Coordinate {
   final double latitude;
@@ -18,14 +18,16 @@ class Coordinate {
 
   @override
   bool operator ==(Object other) =>
-      other is Coordinate && other.runtimeType == runtimeType && other.latitude == latitude && other.longitude == longitude;
+      other is Coordinate &&
+      other.runtimeType == runtimeType &&
+      other.latitude == latitude &&
+      other.longitude == longitude;
 
   @override
   int get hashCode => hashValues(latitude, longitude);
 
   @override
   String toString() {
-    // TODO: implement toString
     return "${latitude.toStringAsFixed(6)}, ${longitude.toStringAsFixed(6)}";
   }
 }

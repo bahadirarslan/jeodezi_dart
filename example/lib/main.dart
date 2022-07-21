@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jeodezi/coordinates.dart';
 import 'package:jeodezi/jeodezi.dart';
 
 void main() {
@@ -31,10 +30,14 @@ class ExampleHomeScreen extends StatefulWidget {
 
 class _ExampleHomeScreenState extends State<ExampleHomeScreen> {
   final greatCircle = GreatCircle();
-  final istCoordinates = Coordinate(41.28111111, 28.75333333); // The coordinates of Istanbul Airport
-  final jfkCoordinates = Coordinate(40.63980103, -73.77890015); // The coordinates of New York JFK Airport
-  final fcoCoordinates = Coordinate(41.8002778, 12.2388889); // The coordinates of Roma Fiumicino Airport
-  final sfoCoordinates = Coordinate(37.615223, -122.389977); // The coordinates of San Francisco SFO Airport
+  final istCoordinates = Coordinate(
+      41.28111111, 28.75333333); // The coordinates of Istanbul Airport
+  final jfkCoordinates = Coordinate(
+      40.63980103, -73.77890015); // The coordinates of New York JFK Airport
+  final fcoCoordinates = Coordinate(
+      41.8002778, 12.2388889); // The coordinates of Roma Fiumicino Airport
+  final sfoCoordinates = Coordinate(
+      37.615223, -122.389977); // The coordinates of San Francisco SFO Airport
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,49 +54,61 @@ class _ExampleHomeScreenState extends State<ExampleHomeScreen> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  final distance = greatCircle.distance(istCoordinates, jfkCoordinates);
+                  final distance =
+                      greatCircle.distance(istCoordinates, jfkCoordinates);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("Great Circle distance between Istanbul Airport and JFK Airport is ${distance.toStringAsFixed(2)} km"),
+                    content: Text(
+                        "Great Circle distance between Istanbul Airport and JFK Airport is ${distance.toStringAsFixed(2)} km"),
                   ));
                 },
                 child: const Text("Calculate Distance")),
             ElevatedButton(
                 onPressed: () {
-                  final distance = greatCircle.distanceInNm(istCoordinates, jfkCoordinates);
+                  final distance =
+                      greatCircle.distanceInNm(istCoordinates, jfkCoordinates);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("Great Circle distance between Istanbul Airport and JFK Airport is ${distance.toStringAsFixed(2)} nm"),
+                    content: Text(
+                        "Great Circle distance between Istanbul Airport and JFK Airport is ${distance.toStringAsFixed(2)} nm"),
                   ));
                 },
                 child: const Text("Calculate Distance (Nm)")),
             ElevatedButton(
                 onPressed: () {
-                  final bearing = greatCircle.bearing(istCoordinates, jfkCoordinates);
+                  final bearing =
+                      greatCircle.bearing(istCoordinates, jfkCoordinates);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content:
-                        Text("Initial bearing for great circle between Istanbul Airport and JFK Airport is ${bearing.toStringAsFixed(2)} degrees"),
+                    content: Text(
+                        "Initial bearing for great circle between Istanbul Airport and JFK Airport is ${bearing.toStringAsFixed(2)} degrees"),
                   ));
                 },
                 child: const Text("Bearing")),
             ElevatedButton(
                 onPressed: () {
-                  final bearing = greatCircle.finalBearing(istCoordinates, jfkCoordinates);
+                  final bearing =
+                      greatCircle.finalBearing(istCoordinates, jfkCoordinates);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("Final bearing for great circle between Istanbul Airport and JFK Airport is ${bearing.toStringAsFixed(2)} degrees"),
+                    content: Text(
+                        "Final bearing for great circle between Istanbul Airport and JFK Airport is ${bearing.toStringAsFixed(2)} degrees"),
                   ));
                 },
                 child: const Text("Final Bearing")),
             ElevatedButton(
                 onPressed: () {
-                  final midpoint = greatCircle.midpoint(istCoordinates, jfkCoordinates);
+                  final midpoint =
+                      greatCircle.midpoint(istCoordinates, jfkCoordinates);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("Midpoint's coordinates of great circle between Istanbul Airport and JFK Airport are $midpoint "),
+                    content: Text(
+                        "Midpoint's coordinates of great circle between Istanbul Airport and JFK Airport are $midpoint "),
                   ));
                 },
                 child: const Text("Midpoint")),
             ElevatedButton(
                 onPressed: () {
                   const fraction = 1.0;
-                  final intermediate = greatCircle.intermediate(startPoint: istCoordinates, endPoint: jfkCoordinates, fraction: fraction);
+                  final intermediate = greatCircle.intermediate(
+                      startPoint: istCoordinates,
+                      endPoint: jfkCoordinates,
+                      fraction: fraction);
 
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text(
@@ -170,8 +185,8 @@ class _ExampleHomeScreenState extends State<ExampleHomeScreen> {
                   );
 
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content:
-                        Text("The maximum latitude of the path from Istanbul Airport on bearing $bearingFromIstanbulToWest is $maxLatitude degrees"),
+                    content: Text(
+                        "The maximum latitude of the path from Istanbul Airport on bearing $bearingFromIstanbulToWest is $maxLatitude degrees"),
                   ));
                 },
                 child: const Text("Max Latitudes")),
@@ -185,7 +200,8 @@ class _ExampleHomeScreenState extends State<ExampleHomeScreen> {
                   );
                   if (crossingParallels.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      content: Text("The great circle between Istanbul Airport and SFO Airport does not cross latitude $latitude"),
+                      content: Text(
+                          "The great circle between Istanbul Airport and SFO Airport does not cross latitude $latitude"),
                     ));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(

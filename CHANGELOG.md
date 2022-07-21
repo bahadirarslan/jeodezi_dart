@@ -1,3 +1,9 @@
+## 1.0.3
+
+- lib folder restructred
+- source files reformated
+- library description changed
+
 ## 1.0.2
 
 - Coordinate class fromString constructor added

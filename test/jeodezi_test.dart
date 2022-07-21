@@ -1,13 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jeodezi/coordinates.dart';
 
 import 'package:jeodezi/jeodezi.dart';
 
 final greatCircle = GreatCircle();
-final istCoordinates = Coordinate(41.28111111, 28.75333333); // The coordinates of Istanbul Airport
-final jfkCoordinates = Coordinate(40.63980103, -73.77890015); // The coordinates of New York JFK Airport
-final fcoCoordinates = Coordinate(41.8002778, 12.2388889); // The coordinates of Roma Fiumicino Airport
-final sfoCoordinates = Coordinate(37.615223, -122.389977); // The coordinates of San Francisco SFO Airport
+final istCoordinates =
+    Coordinate(41.28111111, 28.75333333); // The coordinates of Istanbul Airport
+final jfkCoordinates = Coordinate(
+    40.63980103, -73.77890015); // The coordinates of New York JFK Airport
+final fcoCoordinates = Coordinate(
+    41.8002778, 12.2388889); // The coordinates of Roma Fiumicino Airport
+final sfoCoordinates = Coordinate(
+    37.615223, -122.389977); // The coordinates of San Francisco SFO Airport
 const delta = 1; // The delta for the tests
 void main() {
   test('coordinate', () {
@@ -37,7 +40,8 @@ void main() {
   });
 
   test('final bearing', () {
-    final finalBearing = greatCircle.finalBearing(istCoordinates, jfkCoordinates);
+    final finalBearing =
+        greatCircle.finalBearing(istCoordinates, jfkCoordinates);
     expect(finalBearing, closeTo(230, delta));
   });
 
@@ -48,7 +52,10 @@ void main() {
   });
   test('intermediate', () {
     const fraction = 1.0;
-    final intermediate = greatCircle.intermediate(startPoint: istCoordinates, endPoint: jfkCoordinates, fraction: fraction);
+    final intermediate = greatCircle.intermediate(
+        startPoint: istCoordinates,
+        endPoint: jfkCoordinates,
+        fraction: fraction);
     expect(intermediate.latitude, closeTo(40, delta));
     expect(intermediate.longitude, closeTo(-73, delta));
   });
@@ -69,11 +76,17 @@ void main() {
     const bearingFromIstanbulToWest = 270.0;
     var bearingFromRomeToNorthEast = 45.0;
     var intersection = greatCircle.intersection(
-        firstPoint: istCoordinates, firstBearing: bearingFromIstanbulToWest, secondPoint: fcoCoordinates, secondBearing: bearingFromRomeToNorthEast);
+        firstPoint: istCoordinates,
+        firstBearing: bearingFromIstanbulToWest,
+        secondPoint: fcoCoordinates,
+        secondBearing: bearingFromRomeToNorthEast);
     expect(intersection, null);
     bearingFromRomeToNorthEast = 90.0;
     intersection = greatCircle.intersection(
-        firstPoint: istCoordinates, firstBearing: bearingFromIstanbulToWest, secondPoint: fcoCoordinates, secondBearing: bearingFromRomeToNorthEast);
+        firstPoint: istCoordinates,
+        firstBearing: bearingFromIstanbulToWest,
+        secondPoint: fcoCoordinates,
+        secondBearing: bearingFromRomeToNorthEast);
     expect(intersection!.latitude, closeTo(41, delta));
     expect(intersection.longitude, closeTo(24, delta));
   });
