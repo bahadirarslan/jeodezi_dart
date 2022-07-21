@@ -156,7 +156,7 @@ You can find an example application which uses Jeodezi library in the repo.
 
 ## Contributing
 
-Jeodezi is a work in progress. Currently only a little part of functions of [Geodesy Functions](https://github.com/chrisveness/geodesy) are ported to Kotlin. There are lots to do and your contributions are most welcome. Feel free to fork the repo and submit Pull Request's.
+Jeodezi is a work in progress. Currently only a little part of functions of [Geodesy Functions](https://github.com/chrisveness/geodesy) are ported to Dart. There are lots to do and your contributions are most welcome. Feel free to fork the repo and submit Pull Request's.
 You can help about
 
 - Unit testing
