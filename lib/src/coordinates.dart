@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'extensions.dart';
 
 class Coordinate {
@@ -17,14 +16,10 @@ class Coordinate {
   double get longitudeInRadians => longitude.toRadians();
 
   @override
-  bool operator ==(Object other) =>
-      other is Coordinate &&
-      other.runtimeType == runtimeType &&
-      other.latitude == latitude &&
-      other.longitude == longitude;
+  bool operator ==(Object other) => other is Coordinate && other.runtimeType == runtimeType && other.latitude == latitude && other.longitude == longitude;
 
   @override
-  int get hashCode => hashValues(latitude, longitude);
+  int get hashCode => Object.hash(latitude, longitude);
 
   @override
   String toString() {

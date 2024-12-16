@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Deprecated `hashValues` method changed with `Object.hash` method
+
 ## 1.0.3
 
 - lib folder restructred
